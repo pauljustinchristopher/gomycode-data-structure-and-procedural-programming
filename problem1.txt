@@ -1,27 +1,27 @@
 Algorithm SumOfUniqueElements
-Input: firstSet[4] = [3, 1, 7, 9], secondSet[5] = [2, 4, 1, 9, 3]
+Input: firstSet[4] := [3, 1, 7, 9], secondSet[5] := [2, 4, 1, 9, 3]
 Output: totalSum
 
 Begin
-    totalSum ← 0
+    totalSum := 0
 
-    // Check elements in firstSet not found in secondSet
-    for firstIndex ← 0 to length(firstSet) - 1 do
-        isCommon ← false
-        for secondIndex ← 0 to length(secondSet) - 1 do
-            if firstSet[firstIndex] = secondSet[secondIndex] then
-                isCommon ← true
+    // Add elements from firstSet that are not in secondSet
+    for indexFirst := 0 to length(firstSet) - 1 do
+        isCommon := false
+        for indexSecond := 0 to length(secondSet) - 1 do
+            if firstSet[indexFirst] = secondSet[indexSecond] then
+                isCommon := true
         if isCommon = false then
-            totalSum ← totalSum + firstSet[firstIndex]
+            totalSum := totalSum + firstSet[indexFirst]
 
-    // Check elements in secondSet not found in firstSet
-    for secondIndex ← 0 to length(secondSet) - 1 do
-        isCommon ← false
-        for firstIndex ← 0 to length(firstSet) - 1 do
-            if secondSet[secondIndex] = firstSet[firstIndex] then
-                isCommon ← true
+    // Add elements from secondSet that are not in firstSet
+    for indexSecond := 0 to length(secondSet) - 1 do
+        isCommon := false
+        for indexFirst := 0 to length(firstSet) - 1 do
+            if secondSet[indexSecond] = firstSet[indexFirst] then
+                isCommon := true
         if isCommon = false then
-            totalSum ← totalSum + secondSet[secondIndex]
+            totalSum := totalSum + secondSet[indexSecond]
 
     Output totalSum
 End
