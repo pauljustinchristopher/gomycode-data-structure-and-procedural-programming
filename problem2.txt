@@ -1,0 +1,47 @@
+Procedure dot_product(vectorA[ ], vectorB[ ], length, result)
+Begin
+    result := 0
+    for position := 0 to length - 1 do
+        result := result + vectorA[position] * vectorB[position]
+End
+
+
+
+1. Algorithm CheckOrthogonality_Procedure
+Input: totalPairs, vectorsA[totalPairs][length], vectorsB[totalPairs][length]
+Output: Orthogonality check for each pair
+
+Begin
+    for currentPair := 0 to totalPairs - 1 do
+        Call dot_product(vectorsA[currentPair], vectorsB[currentPair], length, dotResult)
+        if dotResult = 0 then
+            Output "Pair ", currentPair + 1, " is orthogonal"
+        else
+            Output "Pair ", currentPair + 1, " is not orthogonal"
+End
+
+
+2. Function Version of dot_product
+Function dot_product(vectorA[ ], vectorB[ ], length)
+Begin
+    result := 0
+    for position := 0 to length - 1 do
+        result := result + vectorA[position] * vectorB[position]
+    return result
+End
+ 
+
+
+
+3. Algorithm CheckOrthogonality_Function
+Input: totalPairs, vectorsA[totalPairs][length], vectorsB[totalPairs][length]
+Output: Orthogonality check for each pair
+
+Begin
+    for currentPair := 0 to totalPairs - 1 do
+        dotResult := dot_product(vectorsA[currentPair], vectorsB[currentPair], length)
+        if dotResult = 0 then
+            Output "Pair ", currentPair + 1, " is orthogonal"
+        else
+            Output "Pair ", currentPair + 1, " is not orthogonal"
+End

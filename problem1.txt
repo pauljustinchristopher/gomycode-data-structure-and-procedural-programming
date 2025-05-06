@@ -1,0 +1,27 @@
+Algorithm SumOfUniqueElements
+Input: firstSet[4] = [3, 1, 7, 9], secondSet[5] = [2, 4, 1, 9, 3]
+Output: totalSum
+
+Begin
+    totalSum ← 0
+
+    // Check elements in firstSet not found in secondSet
+    for firstIndex ← 0 to length(firstSet) - 1 do
+        isCommon ← false
+        for secondIndex ← 0 to length(secondSet) - 1 do
+            if firstSet[firstIndex] = secondSet[secondIndex] then
+                isCommon ← true
+        if isCommon = false then
+            totalSum ← totalSum + firstSet[firstIndex]
+
+    // Check elements in secondSet not found in firstSet
+    for secondIndex ← 0 to length(secondSet) - 1 do
+        isCommon ← false
+        for firstIndex ← 0 to length(firstSet) - 1 do
+            if secondSet[secondIndex] = firstSet[firstIndex] then
+                isCommon ← true
+        if isCommon = false then
+            totalSum ← totalSum + secondSet[secondIndex]
+
+    Output totalSum
+End
